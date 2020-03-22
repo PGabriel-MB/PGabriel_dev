@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
+body { margin: 0;}
+
 h1 {
     font-family: 'Ubuntu Mono', monospace;
     color: #fff;
@@ -20,14 +22,19 @@ h1 {
     align-items: center;
 }
 
-header{
+header {
     text-align: center;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     background-color: #000;
+    transition: background-color 1s;
 }
 
-header div span{
+header:hover {
+    background-color: rgb(70, 68, 68);
+}
+
+header div span {
     font-family: 'Ubuntu Mono', monospace;
     text-align: center;
     color: #fff;
@@ -38,4 +45,40 @@ header div span{
     border-top: solid;
     padding: 3px;
     border-bottom: solid;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    font-family: 'Ubuntu Mono', monospace;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .borda:hover {
+    color: #f1f1f1;
+    border-bottom: #818181 solid;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
