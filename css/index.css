@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
-body { margin: 0;}
+body { margin: 0;
+    background: url('../img/home.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+}
 
 h1 {
     font-family: 'Ubuntu Mono', monospace;
@@ -82,3 +86,6 @@ header div span {
     font-size: 36px;
     margin-left: 50px;
 }
+
+/* -----  HOME ------ */
+
