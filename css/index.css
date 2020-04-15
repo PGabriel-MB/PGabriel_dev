@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
-body { margin: 0;
-    background: url('../img/home.jpg') no-repeat;
+.div_img_home { 
+    margin: 0;
     background-attachment: fixed;
-    background-size: 100% auto;
+    background-size: cover;
+}
+body{
+    background-color: #000;
+}
+
+#img_home {
+    height: auto;
+    width: 100%;
 }
 
 h1 {
