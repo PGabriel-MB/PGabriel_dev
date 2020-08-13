@@ -40,8 +40,8 @@ h1 {
 
 header {
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 15px;
     background-color: #000;
     transition: background-color 1s;
 }
@@ -131,7 +131,7 @@ header div span {
 .servicos_desc {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     white-space: normal;
 }
 
@@ -154,6 +154,7 @@ header div span {
 .servico {
     color: gray;
     font-size: 20px;
+    font-weight: 700;
 }
 
 
