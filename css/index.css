@@ -159,4 +159,6 @@ header div span {
 
 
 /*--- Tech-Stack---*/
-#tech-stack
+#tech-stack div .card {
+    width: 18rem;
+}
