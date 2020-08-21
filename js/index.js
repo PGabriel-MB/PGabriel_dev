@@ -1,7 +1,6 @@
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+function closeDropdowNavbar () {
+    let dropdown = document.getElementById('navbarSupportedContent');
+    if (dropdown.classList.contains('show')) {
+        dropdown.classList.toggle('show');        
+    }
 }

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 .div_img_home { 
     background: url("../img/home.jpg") no-repeat;
     width: 100%;
@@ -160,5 +164,5 @@ header div span {
 
 /*--- Tech-Stack---*/
 #tech-stack div .card {
-    width: 18rem;
+    max-width: 13rem;
 }
