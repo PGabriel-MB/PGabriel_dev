@@ -166,3 +166,30 @@ header div span {
 #tech-stack div .card {
     max-width: 13rem;
 }
+
+/*--- Contato ---*/
+#contact {
+    background-color: #000;
+    font-family: 'Ubuntu Mono', monospace;
+    color: red;
+}
+
+.social-media{
+    font-size: 2.3rem !important;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color:red;
+}
+
+a:hover{
+    transition: .3s;
+    color: whitesmoke !important;
+}
+
+#h_contato { color:gray }
+
+.mini-font{
+    font-size: .7rem;
+}
