@@ -1,20 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
 html {
     scroll-behavior: smooth;
 }
 
-.div_img_home { 
-    background: url("../img/home.jpg") no-repeat;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div_img_home {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%), url("../img/home.jpg") no-repeat;
+    background-blend-mode: overlay;
     width: 100%;
     height: 900px;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-body{
-    background-color: #000;
+.div_img_home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
 }
 
 #img_home {
@@ -23,15 +48,20 @@ body{
 }
 
 h1 {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Poppins', sans-serif;
     color: #fff;
     margin-bottom: 0;
     margin-top: 0;
     font-size: 80px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 #img_coffe {
-    color: red;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 55px;
     margin-left: 5px;
 }
@@ -46,12 +76,15 @@ header {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 15px;
-    background-color: #000;
-    transition: background-color 1s;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header:hover {
-    background-color: rgb(70, 68, 68);
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 header div span {
@@ -105,27 +138,51 @@ header div span {
 
 /* -----  HOME ------ */
 #title_name {
-    font-family: 'Ubuntu Mono', monospace;
-    color: gray;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 #piscar {
-  -webkit-animation: piscar .75s linear infinite;
-  -moz-animation: piscar .75s linear infinite;
-  -ms-animation: piscar .75s linear infinite;
-  -o-animation: piscar .75s linear infinite;
-  animation: piscar .75s linear infinite;
+    animation: piscar 1s ease-in-out infinite;
+    font-weight: 700;
 }
+
 @keyframes piscar {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Smooth fade-in on load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInUp 0.8s ease-out;
 }
 
 /* -----  Servicos ------ */
 
-#servicos { 
-    background: url("../img/desk_code-min.jpg") no-repeat;
+#servicos {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%), url("../img/desk_code-min.jpg") no-repeat;
+    background-blend-mode: overlay;
     width: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -133,63 +190,213 @@ header div span {
 }
 
 .servicos_desc {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
     color: white;
-    border-radius: 15px;
+    border-radius: 20px;
     white-space: normal;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .servicos_desc h2 {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
 #icone {
     width: 30%;
 }
 
 #linkIeda {
-    color: orange;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
 }
-#linkIeda:hover{
-    transition: .3s;
-    color: orangered;
+
+#linkIeda::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    transition: width 0.3s ease;
+}
+
+#linkIeda:hover::after {
+    width: 100%;
 }
 
 .servico {
-    color: gray;
-    font-size: 20px;
+    color: #e0e0e0;
+    font-size: 22px;
     font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+    border-color: rgba(255, 0, 110, 0.3) !important;
+}
+
+.card:hover .servico {
+    color: #ff006e;
+    text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
 }
 
 
 /*--- Tech-Stack---*/
+#tech-stack {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+#tech-stack h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 50px;
+}
+
 #tech-stack div .card {
     max-width: 13rem;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+#tech-stack .card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(255, 0, 110, 0.25);
+    border-color: rgba(255, 0, 110, 0.3) !important;
+}
+
+#tech-stack .card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(0%);
+}
+
+#tech-stack .card:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 110, 0.4));
 }
 
 /*--- Contato ---*/
 #contact {
-    background-color: #000;
-    font-family: 'Ubuntu Mono', monospace;
-    color: red;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    border-top: 1px solid rgba(255, 0, 110, 0.2);
 }
 
-.social-media{
+#contact h2 {
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+#contact h4 {
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#contact h4:hover {
+    color: #ff006e;
+    transform: translateX(5px);
+}
+
+.social-media {
     font-size: 2.3rem !important;
 }
 
-a:link, a:visited, a:active {
+.social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background: rgba(255, 0, 110, 0.1);
+    border: 2px solid rgba(255, 0, 110, 0.3);
+    color: #ff006e;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.social-media a:hover {
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    color: white;
+    transform: translateY(-8px) scale(1.1);
+    border-color: transparent;
+    box-shadow: 0 15px 35px rgba(255, 0, 110, 0.3);
+}
+
+a:link,
+a:visited,
+a:active {
     text-decoration: none;
-    color:red;
+    color: #ff006e;
+    transition: all 0.3s ease;
 }
 
-a:hover{
-    transition: .3s;
-    color: whitesmoke !important;
+a:hover {
+    color: #ff006e !important;
 }
 
-#h_contato { color:gray }
+#h_contato {
+    color: #e0e0e0;
+}
 
-.mini-font{
+.mini-font {
     font-size: .7rem;
 }
